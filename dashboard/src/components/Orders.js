@@ -3,21 +3,20 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Orders = () => {
-  
-    const [allOrders, setAllOrders] = useState([]);
-  
-    useEffect(() => {
-      axios
-        .get("https://zerodha-clone-3oev.onrender.com/allOrders")
-        .then((res) => {
-          setAllOrders(res.data);
-        })
-        .catch((e) => {
-          console.log("fetching problem in Holdings Details");
-        });
-    }, []);
+  // const [allOrders, setAllOrders] = useState([]);
 
-    
+  useEffect(() => {
+    axios
+      .get("https://zerodha-clone-3oev.onrender.com/allOrders")
+      .then((res) => {
+        // setAllOrders(res.data);
+        console.log("setAllOrders(res.data)");
+      })
+      .catch((e) => {
+        console.log("fetching problem in Holdings Details");
+      });
+  }, []);
+
   return (
     <div className="orders">
       <div className="no-orders">
